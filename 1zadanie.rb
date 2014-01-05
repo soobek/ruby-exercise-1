@@ -15,15 +15,23 @@ menu = gets.chomp.to_i
 	case  menu
 		when 1 then
 		puts "Add Title Of Album"
-		tablica << gets.chomp
+		title = gets.chomp
+		if tablica.index(title)
+		puts "This title already exist"
+		else		
+		tablica << title
 		puts ""	
-		puts "Success!"
+		puts "Success! You have added #{title}! "
+		end
 		when 2 then
 		puts "Delete Title:"
 		title = gets.chomp
-		tablica.delete(title) { "This is wrong title." }
-		puts ""
-		puts "Success!"
+			if tablica.index(title)
+			tablica.delete(title)
+			puts ""
+			puts "Success! Removed #{title}! "
+			else puts"This title not exist on database"
+			end
 		when 3 then
 		puts "Your Albums"
 		puts ""
@@ -31,7 +39,7 @@ menu = gets.chomp.to_i
 		when 4 then
 		puts "Bye, Bye"
 	else
-  puts "Nieprawidłowy wybór. Wybierz 1,2,3 lub 4 !"
+  puts "Invalid choice. Choose 1,2,3 or 4"
   lista
   menu = gets.chomp.to_i
 end
