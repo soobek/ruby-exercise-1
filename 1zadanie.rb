@@ -16,7 +16,7 @@ menu = gets.chomp.to_i
 	case  menu
 		when 1 then
 		puts "Add Title Of Album"
-		title = gets.chomp
+		title = gets.chomp.capitalize
 		if tablica.index(title)
 		puts "This title already exist"
 		else		
