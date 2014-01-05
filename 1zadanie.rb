@@ -1,12 +1,6 @@
 #!/usr/bin/env ruby
 def lista
-print "
-What do you want to do?
-1. Add album
-2. Remove album
-3. Show album
-4. Quite
-"
+puts " \n What do you want to do? \n 1. Add album \n 2. Remove album \n 3. Show album \n 4. Quite \n"
 end
 
 tablica = [nil]
@@ -21,25 +15,18 @@ menu = gets.chomp.to_i
 		puts "This title already exist"
 		else		
 		tablica << title	
-		print "
-Success! You have added #{title}!
-
-"
+		puts "\n Success! You have added #{title}! \n"
 		end
 		when 2 then
 		puts "Delete Title:"
 		title = gets.chomp
 			if tablica.index(title)
 			tablica.delete(title)
-			print "
-Success! Removed #{title}!
-
-"
-			else puts"This title not exist on database"
+			puts "\n Success! Removed #{title}! \n"
+			else puts"\n This title not exist on database \n"
 			end
 		when 3 then
-		print "
-Your Albums"
+		puts "\n Your Albums"
 		puts tablica 
 		when 4 then
 		puts "Bye, Bye"
