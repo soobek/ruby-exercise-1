@@ -32,8 +32,7 @@ menu = gets.chomp.to_i
 		puts "Bye, Bye"
 	else
   puts "Invalid choice. Choose 1,2,3 or 4"
-  lista
-  menu = gets.chomp.to_i
 end
+
 end until menu == 4
 
