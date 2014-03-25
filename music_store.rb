@@ -37,20 +37,20 @@ begin
 				  end
 			when 3 then
 			  puts "\n Your Albums"
-			  album.each do |title, song|
-									  puts title
-									  song.each_with_index do |song_title, index|
-																				  puts "#{index+1}. #{song_title}"
-																				 end
-									 end
+        album.each do |title, song|
+                      puts title
+                      song.each_with_index do |song_title, index|
+                                              puts "#{index+1}. #{song_title}"
+                                           end
+                   end
 			when 4 then
 			  album.each_key { |title| puts title }
 			  puts "Which album you want to see?"
 			  title_album = gets.chomp
 				  if album.has_key?(title_album)
-				    album[title_album].each_with_index do |song_title, index|
-																				        puts "#{index+1}. #{song_title}"
-																				       end				
+             album[title_album].each_with_index do |song_title, index|
+                                                    puts "#{index+1}. #{song_title}"
+                                                end				
 				  else
 				    puts"\n This album not exist on database \n"
 				  end
@@ -59,8 +59,8 @@ begin
 			  title_album = gets.chomp
 				  if album.has_key?(title_album)
 				    album[title_album].each_with_index do |song_title, index|
-																				        puts "#{index+1}. #{song_title}"
-																				       end
+                                                   puts "#{index+1}. #{song_title}"
+                                               end
 				    puts "\n Which number of song you want to delete? \n"
 				    song = gets.chomp.to_i
 				    album [title_album].delete_at(song-1)
